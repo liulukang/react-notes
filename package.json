@@ -1,0 +1,32 @@
+{
+  "name": "react_stack_demo",
+  "version": "1.0.0",
+  "description": "进一步理解react 技术栈",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "budo src/index.js:build.js --dir ./ --verbose  --live -- -t babelify"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@gitee.com:liulukang/react_stack_demo.git"
+  },
+  "author": "lukang.liu",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "babelify": "^8.0.0",
+    "budo": "^11.2.2"
+  },
+  "dependencies": {
+    "babel-polyfill": "^6.26.0",
+    "react": "^16.4.0",
+    "react-dom": "^16.4.0",
+    "redux": "^4.0.0",
+    "redux-saga": "^0.16.0"
+  }
+}
