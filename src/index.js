@@ -4,13 +4,14 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 
 import initStore from './store';
-import Counter from './containers/Counter';
+import initRouter from './router';
 
 const store = initStore();
+const routers = initRouter();
 
 ReactDOM.render(
   <Provider store={store}>
-    <Counter />
+    {routers}
   </Provider>,
   document.getElementById('root')
 );
