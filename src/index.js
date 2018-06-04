@@ -7,7 +7,7 @@ import initStore from './store';
 import initRouter from './router';
 
 const store = initStore();
-const routers = initRouter();
+const routers = initRouter(store);
 
 ReactDOM.render(
   <Provider store={store}>
