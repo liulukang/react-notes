@@ -7,10 +7,25 @@ import Layout from './compoents/Layout';
 import Counter from './containers/Counter';
 import Page2 from './containers/Page2';
 
-const hashHistory = createHashHistory();
+const hashHistory = createHashHistory({
+  getUserConfirmation(message, callback) {
+    console.log(message);
+    callback(false)
+  }
+});
 
 const initRouter = (store) => {
   const history = syncHistoryWithStore(hashHistory, store);
+
+  history.listen((location, action) => {
+    console.log(location, action);
+  })
+
+  history.block((location, action) => {
+    console.log(location, action);
+    return "Are you sure you want to leave this page?"
+  })
+
   return (<Router history={history}>
     <Layout>
       <Switch>
