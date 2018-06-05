@@ -1,7 +1,7 @@
 import React from 'react';
 import createHashHistory from 'history/createHashHistory';
 import { HashRouter as Router, Route, Switch } from "react-router-dom";
-import { ConnectedRouter, syncHistoryWithStore } from 'react-router-redux';
+import  {ConnectedRouter, syncHistoryWithStore } from 'react-router-redux';
 
 import Layout from './compoents/Layout';
 import Counter from './containers/Counter';
@@ -10,7 +10,8 @@ import Page2 from './containers/Page2';
 const hashHistory = createHashHistory({
   getUserConfirmation(message, callback) {
     console.log(message);
-    callback(false)
+    callback(true) // 继续
+    // callback(false) // 终止跳转
   }
 });
 
@@ -26,7 +27,7 @@ const initRouter = (store) => {
     return "Are you sure you want to leave this page?"
   })
 
-  return (<Router history={history}>
+  return (<Router>
     <Layout>
       <Switch>
         <Route path="/page1" component={Counter} />
