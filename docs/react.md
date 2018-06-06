@@ -2,7 +2,6 @@
 
  - ``React`` 是一个 **JavaScript库**
   
-
 ### react 概论
  
 ### 组件类型
