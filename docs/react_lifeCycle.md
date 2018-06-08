@@ -78,9 +78,29 @@
 
 ### 常见问题
 
-  - 不能 `componentWillUpdate` `componentDidUpdate` 生命周期使用 `this.setState()`，会造成死循环
+  -  `componentWillUpdate` 生命周期使用 `this.setState()`，会造成死循环
+  -  `componentDidUpdate`  生命周期使用 `this.setState()`，会触发重复渲染
 
+### React v16.3 新生命周期
+
+  **react v16.3删掉以下三个生命周期**
+
+  -  `componentWillMount`
+  -  `componentWillReceiveProps`
+  -  `componentWillUpdate`
+
+  **新增两个生命周期**
+  - `static getDerivedStateFromProps`
+
+    - 触发时间：在组件构建之后(虚拟dom之后，实际dom挂载之前) ，以及每次获取新的props之后。
+    - 每次接收新的props之后都会返回一个对象作为新的state，返回null则说明不需要更新state.
+    - 配合componentDidUpdate，可以覆盖componentWillReceiveProps的所有用法
+
+  - `getSnapshotBeforeUpdate`
+
+    - 触发时间: update发生的时候，在render之后，在组件dom渲染之前。
+    - 返回一个值，作为componentDidUpdate的第三个参数。
+    - 配合componentDidUpdate, 可以覆盖componentWillUpdate的所有用法
 
 ### 参考文档
   - [gitbook](https://chenyitian.gitbooks.io/react-docs/content/docs/ref-03-component-specs.html)
-  - [react事件属性](https://www.cnblogs.com/mabylove/p/6873506.html) 
