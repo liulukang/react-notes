@@ -1,13 +1,10 @@
 ## react 合成事件系统
 
-    [react-gitbook](https://chenyitian.gitbooks.io/react-docs/content/docs/ref-05-events.html)
+#### 概论
 
   `React`自己实现了一套高效的事件注册，存储，分发和重用逻辑，在DOM事件体系基础上做了很大改进，减少了内存消耗，简化了事件逻辑，并最大化的解决了IE等浏览器的不兼容问题。
   
 #### 通用属性 
-
-  [react事件属性](https://www.cnblogs.com/mabylove/p/6873506.html) 
-
 - `bubbles (boolean)` 表示事件是否冒泡
 - `cancelable(boolean)` 表示事件是否可以取消
 - `currentTarget(DOMEventTarget)` 与Target类似，由于事件可以冒泡，所以两者表示的内容是不同的
@@ -62,3 +59,8 @@
   ```
 
   > 如果您想以一个异步的方式来访问事件属性，您应该对事件调用`event.persist()`。这将从事件池中取出合成的事件，并允许该事件的引用，使用户的代码被保留。
+
+  
+#### 参考文档
+  - [gitbook](https://chenyitian.gitbooks.io/react-docs/content/docs/ref-05-events.html)
+  - [react事件属性](https://www.cnblogs.com/mabylove/p/6873506.html) 
