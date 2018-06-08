@@ -12,6 +12,8 @@ class Layout extends React.PureComponent {
         <Link to="/page1">page1</Link>
         <br />
         <Link to="/page2">page2</Link>
+        <br />
+        <Link to="/page3">page3</Link>
       </div>
       <br />
       <div>

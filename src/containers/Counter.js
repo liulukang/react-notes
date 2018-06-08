@@ -2,7 +2,6 @@ import { connect } from 'react-redux';
 import Counter from '../compoents/Counter';
 
 function mapStateToProps(state) {
-  console.log(state); // state
   return { store: state }
 }
 
