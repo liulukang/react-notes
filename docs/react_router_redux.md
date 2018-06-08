@@ -9,7 +9,7 @@
 
   - `routerMiddleware` 
 
-    ```
+  ```javascript
       export default function routerMiddleware(history) {
         return () => next => action => {
           if (action.type !== CALL_HISTORY_METHOD) {
@@ -20,11 +20,11 @@
           history[method](...args)
         }
       }
-    ```
+  ```
 
   - `routerReducer ` 
 
-    ```
+    ```javascript
       export function routerReducer(state = initialState, { type, payload } = {}) {
         if (type === LOCATION_CHANGE) {
           return { ...state, locationBeforeTransitions: payload }

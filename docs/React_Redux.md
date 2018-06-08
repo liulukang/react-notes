@@ -7,7 +7,7 @@
  1. `<Provider />`是高阶组件,内部通过 `createProvider`方法创建
  2. 实现方式:`createProvider`方法将`redux store`数据通过`react context`方式暴露给子组件
 
-  ```
+  ```javascript
       class Provider extends Component {
         getChildContext() {
           return { [storeKey]: this[storeKey], [subscriptionKey]: null }
@@ -19,15 +19,17 @@
         render() {
           return Children.only(this.props.children)
         }
-    }
-    Provider.propTypes = {
-        store: storeShape.isRequired,
-        children: PropTypes.element.isRequired,
-    }
-    Provider.childContextTypes = {
-        [storeKey]: storeShape.isRequired,
-        [subscriptionKey]: subscriptionShape,
-    }
+      }
+      
+      Provider.propTypes = {
+          store: storeShape.isRequired,
+          children: PropTypes.element.isRequired,
+      }
+
+      Provider.childContextTypes = {
+          [storeKey]: storeShape.isRequired,
+          [subscriptionKey]: subscriptionShape,
+      }
 
   ```
 

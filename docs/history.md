@@ -36,7 +36,7 @@
 
   - `listen`
 
-    ```
+  ```javascript
       // 监听路由进入
       const unlisten = history.listen((location, action) => {
         // location is an object like window.location
@@ -45,13 +45,13 @@
 
       // 取消监听
       unlisten();
-    ```
+  ```
 
   - `block`
 
     监听路由离开,配合`getUserConfirmation option`配置项，可实现页面离开提示
 
-    ```
+  ```javascript
       // 创建 history 对象
       const history = createHistory({
         // 监听页面对话
@@ -66,7 +66,7 @@
       });
       // 取消监听
       unblock()
-    ```
+  ```
 
   - 改变路由API
 

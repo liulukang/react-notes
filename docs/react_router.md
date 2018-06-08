@@ -57,7 +57,7 @@
 
     判断指点路由与目标路由关系
 
-    ```
+  ```javascript
     // 使用方式
     const match = matchPath('/users/123', {
       path: '/users/:id',
@@ -72,9 +72,9 @@
       params: keys.reduce((memo, key, index) => {
         memo[key.name] = values[index];
         return memo;
-    }, {})
-  };
-    ```
+      }, {})
+    };
+  ```
 
   - `withRouter` 
   通过`withRouter`高阶组件访问历史对象的属性。暴露`router`相关信息
@@ -85,7 +85,7 @@
 
 > 问题描述： 
 
- ```
+ ```javascript
   <Router>
     <Layout> // 嵌套一层 layout 
       <Switch>

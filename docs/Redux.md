@@ -23,7 +23,7 @@
 
   合并`reducer`,并返回`combination`函数,根据`reducer key`拆分`state`执行`reducer`,并返回新的`store state`;
 
-  ```
+  ```javascript
     // 核心实现
     function combineReducers(reducers){
         return function combination(state,action){
@@ -59,7 +59,7 @@
 
   **从右到左**构成单参数函数,右边的执行结果是左边的参数。
 
-  ```
+  ```javascript
     // 核心实现
     function compose(...funcs) {
       return funcs.reduce((a, b) => (...args) => a(b(...args)))
@@ -70,7 +70,7 @@
 
   二次封装处理 `dispatch `
 
-  ```
+  ```javascript
   // 核心实现
   function applyMiddleware(...middlewares){
     return (createStore)=>(...args)=>{
@@ -97,7 +97,7 @@
 
     **使用方式**
     
-    ```
+  ```javascript
     // actionCreators
     const actionCreators={
         addTodo(){
@@ -116,19 +116,16 @@
 
     // 注入dispatch
     const boundActionCreators = bindActionCreators(actionCreators, dispatch);
-
-
-
     
-    
-    ```
+  ```
 
     **核心实现**
 
-    ```
+    
+  ```javascript
     function bindActionCreator(actionCreator, dispatch) {
       return function() {
         return dispatch(actionCreator.apply(this, arguments))
       }
     }
-    ```
+  ```
